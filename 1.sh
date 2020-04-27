@@ -1,5 +1,5 @@
 #!/bin/bash
-#Autoscript Created By M Fauzan Romandhoni (m.fauzan58@yahoo.com) (6281311310405)
+#Autoscript Created By Kang ADJI
 clear
 
 
