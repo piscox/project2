@@ -379,6 +379,6 @@ echo "----------------------------------------------"  | tee -a log-install.txt 
 echo "    -------THANK YOU FOR CHOIS US--------"  | tee -a log-install.txt | lolcat
 echo "=============================================="  | tee -a log-install.txt | lolcat
 echo "-   PLEASE REBOOT TAKE TO EFFECT TERIMA KASIH   -" | lolcat
-echo "     ALL MODD DEVELOPED SCRIPT BY KANH HIJI " | lolcat
+echo "     ALL MODD DEVELOPED SCRIPT BY KANGHIJI " | lolcat
 echo "==============================================" | lolcat
 cat /dev/null > ~/.bash_history && history -c
