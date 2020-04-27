@@ -1,5 +1,5 @@
 #!/bin/bash
-#Autoscript Created By Kang hiji
+#Autoscript Created By KANG HIJI
 clear
 
 
@@ -39,11 +39,11 @@ vps="aneka";
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
 if [ $USER != 'root' ]; then
-echo "Maaf, Anda harus menjalankan ini sebagai root"
+echo "Sorry, for run the script please using root user"
 exit 1
 fi
 if [[ "$EUID" -ne 0 ]]; then
-echo "Maaf, Anda harus menjalankan ini sebagai root"
+echo "Sorry, you need to run this as root"
 exit 2
 fi
 
@@ -184,7 +184,7 @@ screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 cd
 
 # ssh
-sed -i '$ i\Banner /etc/issue.net' /etc/ssh/sshd_config
+sed -i '$ i\Banner /etc/banner.txt' /etc/ssh/sshd_config
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
 # dropbear
@@ -198,7 +198,7 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/banner.txt"@g' /etc/default/d
 service ssh restart
 service dropbear restart
 
-# BANNER
+# BAANER
 wget -O /etc/banner.txt $source/banner.txt
 
 # install stunnel4
@@ -208,12 +208,11 @@ rm -f ssl.sh
 
 # install webmin
 cd
-wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.941_all.deb"
-dpkg --install webmin_1.941_all.deb;
+wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.900_all.deb"
+dpkg --install webmin_1.900_all.deb;
 apt-get -y -f install;
-rm /root/webmin_1.941_all.deb
+rm /root/webmin_1.900_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
-apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
 service webmin restart
 
 # download script
@@ -320,7 +319,6 @@ apt-get install boxes
 apt-get -y install ruby
 gem install lolcat
 
-
 # install neofetch
 echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | tee -a /etc/apt/sources.list
 curl "https://bintray.com/user/downloadSubjectPublicKey?username=bintray"| apt-key add -
@@ -352,9 +350,9 @@ history -c
 clear
 echo ""  | tee -a log-install.txt
 echo "=============================================="  | tee -a log-install.txt | lolcat
-echo "  Autoscript Created By Kang hiji "  | tee -a log-install.txt | lolcat
+echo "  Autoscript Created By KANG HIJI "  | tee -a log-install.txt | lolcat
 echo "----------------------------------------------"  | tee -a log-install.txt | lolcat
-echo "Facebook    : https://www.facebook.com/kangbae.1"  | tee -a log-install.txt | lolcat
+echo "Facebook    : https://www.facebook.com/kanghiji"  | tee -a log-install.txt | lolcat
 echo "Contact Me  : +62 81311310405"  | tee -a log-install.txt | lolcat
 echo "----------------------------------------------"  | tee -a log-install.txt | lolcat
 echo "Service     :" | tee -a log-install.txt | lolcat
@@ -378,7 +376,7 @@ echo ""  | tee -a log-install.txt
 echo "----------------------------------------------"  | tee -a log-install.txt | lolcat
 echo "    -------THANK YOU FOR CHOIS US--------"  | tee -a log-install.txt | lolcat
 echo "=============================================="  | tee -a log-install.txt | lolcat
-echo "-   PLEASE REBOOT TAKE TO EFFECT TERIMA KASIH   -" | lolcat
-echo "     ALL MODD DEVELOPED SCRIPT BY KANGHIJI " | lolcat
+echo "-   PLEASE REBOOT TAKE EFFECT TERIMA KASIH   -" | lolcat
+echo "    ALL MODD DEVELOPED SCRIPT BY KANG HIJI" | lolcat
 echo "==============================================" | lolcat
 cat /dev/null > ~/.bash_history && history -c
