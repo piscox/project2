@@ -344,6 +344,7 @@ service squid restart
 service webmin restart
 rm -rf ~/.bash_history && history -c
 echo "unset HISTFILE" >> /etc/profile
+mount -o remount,rw /dev/sda1 /
 
 history -c
 # history
