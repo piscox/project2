@@ -184,7 +184,7 @@ screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 cd
 
 # ssh
-sed -i '$ i\Banner /etc/banner.txt' /etc/ssh/sshd_config
+sed -i '$ i\Banner /etc/issue.net' /etc/ssh/sshd_config
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
 # dropbear
